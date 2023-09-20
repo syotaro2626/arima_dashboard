@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
-import japanize_matplotlib
 import pmdarima as pm
 
 def ARIMA(df, seasonal):
@@ -29,7 +28,7 @@ def ARIMA(df, seasonal):
     ax.fill_between(test_df.index, test_pred_ci[:, 0], test_pred_ci[:, 1], color='tab:red', alpha=.2)
     ax.legend()
     plt.xticks(rotation=45)
-    plt.title('実際の値とARIMA予測値の比較')
+    plt.title('prediction by ARIMA')
     st.pyplot(fig)
                     
 
